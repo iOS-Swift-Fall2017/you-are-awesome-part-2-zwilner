@@ -26,12 +26,16 @@ class ViewController: UIViewController {
     messageLabel.text = "You Are Awesome!"
         
     messageLabel.textColor = UIColor.red
+    
+    messageLabel.textAlignment = NSTextAlignment.left
     }
     
     @IBAction func anotherMessageButton(_ sender: UIButton) {
         print("*** Show Another Message Pressed")
         messageLabel.text = "You Are Great!"
         messageLabel.textColor = UIColor.blue
+        messageLabel.textAlignment = NSTextAlignment.right
+
     }
 }
 
