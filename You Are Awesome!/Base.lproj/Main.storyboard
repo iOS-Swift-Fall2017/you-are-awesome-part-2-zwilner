@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,16 +23,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cY-Uw-14z">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cY-Uw-14z">
                                 <rect key="frame" x="16" y="20" width="343" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="37K-wT-M8a"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsx-6C-jMb">
-                                <rect key="frame" x="135" y="128" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image0" translatesAutoresizingMaskIntoConstraints="NO" id="F0L-3I-dn5">
+                                <rect key="frame" x="16" y="166" width="343" height="452"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-N5-iS7">
+                                <rect key="frame" x="115" y="127" width="51" height="31"/>
+                                <connections>
+                                    <action selector="soundSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="yLf-y2-KcG"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Sound:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sc-45-eMM">
+                                <rect key="frame" x="16" y="132" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsx-6C-jMb">
+                                <rect key="frame" x="255" y="128" width="104" height="30"/>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="messageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E0C-PA-kft"/>
@@ -39,10 +56,28 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1cY-Uw-14z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3bF-62-Oyp"/>
+                            <constraint firstItem="1cY-Uw-14z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5g7-ji-Uv7"/>
+                            <constraint firstItem="1cY-Uw-14z" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="HR2-2u-7aO"/>
+                            <constraint firstItem="Xsx-6C-jMb" firstAttribute="trailing" secondItem="F0L-3I-dn5" secondAttribute="trailing" id="JLV-W3-n3r"/>
+                            <constraint firstItem="F0L-3I-dn5" firstAttribute="top" secondItem="MNh-N5-iS7" secondAttribute="bottom" constant="8" symbolic="YES" id="LaC-Fk-Afd"/>
+                            <constraint firstItem="Xsx-6C-jMb" firstAttribute="top" secondItem="1cY-Uw-14z" secondAttribute="bottom" constant="8" symbolic="YES" id="SwR-Vh-fxg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F0L-3I-dn5" secondAttribute="bottom" constant="49" id="b5q-pT-9Ol"/>
+                            <constraint firstItem="F0L-3I-dn5" firstAttribute="top" secondItem="Xsx-6C-jMb" secondAttribute="bottom" constant="8" symbolic="YES" id="baM-ME-p5z"/>
+                            <constraint firstItem="6sc-45-eMM" firstAttribute="baseline" secondItem="Xsx-6C-jMb" secondAttribute="baseline" id="bbJ-wl-In1"/>
+                            <constraint firstItem="1cY-Uw-14z" firstAttribute="leading" secondItem="6sc-45-eMM" secondAttribute="leading" id="eHd-fv-XzY"/>
+                            <constraint firstItem="1cY-Uw-14z" firstAttribute="trailing" secondItem="Xsx-6C-jMb" secondAttribute="trailing" id="hdX-Jj-J4K"/>
+                            <constraint firstItem="MNh-N5-iS7" firstAttribute="leading" secondItem="6sc-45-eMM" secondAttribute="trailing" constant="8" symbolic="YES" id="j8I-ly-6BR"/>
+                            <constraint firstItem="6sc-45-eMM" firstAttribute="leading" secondItem="F0L-3I-dn5" secondAttribute="leading" id="tXI-0c-mSX"/>
+                            <constraint firstItem="6sc-45-eMM" firstAttribute="centerY" secondItem="MNh-N5-iS7" secondAttribute="centerY" id="xsl-um-m8W"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="awesomeImage" destination="F0L-3I-dn5" id="tdQ-KD-2Ol"/>
                         <outlet property="messageLabel" destination="1cY-Uw-14z" id="6t8-dw-anT"/>
+                        <outlet property="soundSwitch" destination="MNh-N5-iS7" id="YDJ-Ee-Jbp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -50,4 +85,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="124.58770614692655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image0" width="475" height="633"/>
+    </resources>
 </document>
